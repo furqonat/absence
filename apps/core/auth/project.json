@@ -1,0 +1,73 @@
+{
+  "name": "auth",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/core/auth/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nxrocks/nx-spring-boot:build",
+      "options": {
+        "root": "apps/core/auth",
+        "runFromParentModule": true
+      },
+      "dependsOn": ["^install"],
+      "outputs": ["{workspaceRoot}/apps/core/auth/build"]
+    },
+    "install": {
+      "executor": "@nxrocks/nx-spring-boot:install",
+      "options": {
+        "root": "apps/core/auth",
+        "runFromParentModule": true
+      },
+      "dependsOn": ["^install"],
+      "outputs": ["{workspaceRoot}/apps/core/auth/build"]
+    },
+    "test": {
+      "executor": "@nxrocks/nx-spring-boot:test",
+      "options": {
+        "root": "apps/core/auth",
+        "runFromParentModule": true
+      },
+      "outputs": ["{workspaceRoot}/apps/core/auth/build"]
+    },
+    "clean": {
+      "executor": "@nxrocks/nx-spring-boot:clean",
+      "options": {
+        "root": "apps/core/auth",
+        "runFromParentModule": true
+      }
+    },
+    "run": {
+      "executor": "@nxrocks/nx-spring-boot:run",
+      "options": {
+        "root": "apps/core/auth",
+        "runFromParentModule": true
+      },
+      "dependsOn": ["^install"]
+    },
+    "serve": {
+      "executor": "@nxrocks/nx-spring-boot:serve",
+      "options": {
+        "root": "apps/core/auth",
+        "runFromParentModule": true
+      },
+      "dependsOn": ["^install"]
+    },
+    "build-image": {
+      "executor": "@nxrocks/nx-spring-boot:build-image",
+      "options": {
+        "root": "apps/core/auth",
+        "runFromParentModule": true
+      },
+      "outputs": ["{workspaceRoot}/apps/core/auth/build"]
+    },
+    "build-info": {
+      "executor": "@nxrocks/nx-spring-boot:build-info",
+      "options": {
+        "root": "apps/core/auth",
+        "runFromParentModule": true
+      }
+    }
+  },
+  "tags": []
+}

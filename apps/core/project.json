@@ -1,0 +1,38 @@
+{
+  "name": "core",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/core",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nxrocks/nx-spring-boot:build",
+      "options": {
+        "root": "apps/core"
+      },
+      "dependsOn": ["^install"],
+      "outputs": ["{workspaceRoot}/apps/core/build"]
+    },
+    "install": {
+      "executor": "@nxrocks/nx-spring-boot:install",
+      "options": {
+        "root": "apps/core"
+      },
+      "dependsOn": ["^install"],
+      "outputs": ["{workspaceRoot}/apps/core/build"]
+    },
+    "test": {
+      "executor": "@nxrocks/nx-spring-boot:test",
+      "options": {
+        "root": "apps/core"
+      },
+      "outputs": ["{workspaceRoot}/apps/core/build"]
+    },
+    "clean": {
+      "executor": "@nxrocks/nx-spring-boot:clean",
+      "options": {
+        "root": "apps/core"
+      }
+    }
+  },
+  "tags": []
+}
